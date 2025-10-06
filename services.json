@@ -1,0 +1,592 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "name": "Domiciliary Care",
+      "slug": "domiciliary-care",
+      "category": "home-care",
+      "description": "Professional care services provided in the comfort and familiarity of your own home, maintaining your independence while receiving the support you need.",
+      "fullDescription": "Domiciliary care makes this possible. It allows your loved ones to receive the support they need in the place they cherish most—their own home. A safe, familiar space that's proven to help people remain physically and emotionally stronger for longer.",
+      "detailedDescription": "This is why we do what we do—to help parents, grandparents, aunts, and uncles live healthier, more fulfilling lives without leaving the comfort of home. We offer friendly, professional domiciliary care tailored to each individual's needs, helping you or your loved ones stay independent and at ease. Our compassionate care team provides personalised support, giving you peace of mind every step of the way.",
+      "whatIs": "Domiciliary care—also known as home care—means receiving the support you need while continuing to live in the comfort of your own home. From help with personal care and meal preparation to companionship and conversation, we're here to make daily life easier, safer, and more enjoyable.",
+      "typicalVisit": "Truthfully, there's no such thing as a \"typical\" domiciliary care visit with us—because every visit is shaped around the unique needs and preferences of your loved one. No two people are the same, and neither is the care we provide.",
+      "services": [
+        "Gently help them wake up, wash, and get dressed for the day",
+        "Share conversation and reminisce over treasured memories",
+        "Prepare healthy, well-balanced meals",
+        "Organise and administer medication",
+        "Take care of the shopping",
+        "Lighten the load by managing everyday household chores",
+        "Accompany them on visits to friends and family",
+        "Help them settle comfortably into bed at night",
+        "Enjoy walks together for fresh air and exercise"
+      ],
+      "benefits": "With us, the greatest benefit is simple—your loved one gets to remain in the place they love, for longer. But it's so much more than that. They'll receive dedicated one-to-one support, help with daily errands, assistance with bathing and personal care, and freshly prepared, nutritious meals.",
+      "benefitsExtended": "They'll have someone to share stories with, a companion to help them reconnect with old friends, and a safe environment with familiar routines—something that can even help slow the effects of age-related conditions such as dementia.",
+      "gettingStarted": "If you feel our domiciliary care services could be right for your loved one, simply give us a call. We'll take the time to understand your needs and create a personalised care plan tailored just for them. We'll also match you with a Care Expert we believe will be the perfect fit—someone who can help your loved one feel comfortable and supported from day one.",
+      "gettingStartedPoints": [
+        "Personalised care plans tailored to individual needs",
+        "Matched with the perfect Care Expert",
+        "Comfortable and supported from day one"
+      ],
+      "image": "/images/service-1.jpg",
+      "icon": "/images/icon-care-1.svg",
+      "stats": [
+        { "number": "95", "suffix": "%", "label": "Client Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Available Support", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "2",
+      "name": "Night Care",
+      "slug": "night-care",
+      "category": "home-care",
+      "description": "With night care, you're never alone. knowing someone is always there.",
+      "fullDescription": "There's nothing quite like a good night's sleep. And of course, the opposite is true—a restless night can take its toll. That's why we offer Overnight Care: to give your loved ones the very best chance of enjoying the rest they need.",
+      "detailedDescription": "We provide night care, both delivered by our highly trained, compassionate Care Experts, who are there throughout the night. This way, the people who matter most to you can feel safe, supported, and cared for—no matter the hour.",
+      "whatIs": "Night care provides two types of support: Sleeping Night care where one of our Care Experts stays in your loved one's home for eight hours or more, sleeping on-site and available if needed. And Waking Night care where a Care Expert stays awake and alert throughout the night, providing hands-on support for eight hours or more.",
+      "typicalVisit": "With Sleeping Night care, this service isn't about constant care—it's about reassurance, security, and the comfort of knowing someone is there. This extra peace of mind often helps reduce anxiety and encourages deeper, more restorative sleep. With Waking Night care, they'll be right there to provide comfort and care, helping your loved one feel safe and supported so they can rest as peacefully as possible.",
+      "services": [
+        "Sleeping Night care for light support once or twice during the night",
+        "Waking Night care for regular or continuous care throughout the night",
+        "Assistance with trips to the bathroom during the night",
+        "Help with taking medication at night",
+        "Assistance with changing positions in bed",
+        "Support with other personal needs during nighttime",
+        "Providing comfort and care throughout the night",
+        "Maintaining a peaceful sleep environment",
+        "Emergency response and first aid if needed"
+      ],
+      "benefits": "Night care provides invaluable peace of mind for families while ensuring your loved one receives professional care during vulnerable nighttime hours. The greatest benefit is that your loved one gets to feel safe, supported, and cared for—no matter the hour.",
+      "benefitsExtended": "This service helps maintain sleep routines, provides immediate assistance when needed, and reduces the risk of nighttime incidents. The reassurance and security often helps reduce anxiety and encourages deeper, more restorative sleep for your loved one.",
+      "gettingStarted": "If you think Night Care could be the right choice for your loved one, contact your local office—we'd be happy to talk through the options and find the right support for you.",
+      "gettingStartedPoints": [
+        "Two types of night care available: Sleeping Night and Waking Night",
+        "Comprehensive assessment of nighttime support needs",
+        "Highly trained, compassionate Care Experts available throughout the night"
+      ],
+      "image": "/images/care-image-1.jpg",
+      "icon": "/images/icon-care-2.svg",
+      "stats": [
+        { "number": "98", "suffix": "%", "label": "Family Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "8", "suffix": "+", "label": "Hours Coverage", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "3",
+      "name": "Dementia Care",
+      "slug": "dementia-care",
+      "category": "specialist-care",
+      "description": "We understand how challenging life can be when a loved one is living with dementia. That's why we've developed our specialised Dementia Care service, delivered by a nationwide team of highly trained Care Experts.",
+      "fullDescription": "Our approach focuses on two key things: 1. Managing symptoms while providing genuine emotional support. 2. Helping your loved one remain in the place they feel safest – their own home. As dementia progresses, the outside world can feel overwhelming, and even familiar places can seem unfamiliar.",
+      "detailedDescription": "That's why keeping a consistent routine in a familiar environment is so important. At home, surrounded by treasured possessions and memories, your loved one can continue enjoying the moments that matter most. We believe dementia should not prevent your loved one from living the life they want.",
+      "whatIs": "Dementia is not a single condition but a term that describes a range of symptoms caused by different diseases affecting the brain. The brain contains billions of nerve cells (neurons) that communicate via chemical signals. Dementia causes these cells to deteriorate, making it harder for the brain to function normally.",
+      "typicalVisit": "In the early stages, the effects on the body can be minimal. Over time, however, symptoms can worsen — the speed of this progression depends on the cause and the part of the brain affected. We work closely with you to design a care plan that encourages independence while providing the right level of support.",
+      "services": [
+        "Managing symptoms by ensuring medication is taken correctly",
+        "Assistance with washing, dressing, and personal care",
+        "Catheter changes and hygiene management",
+        "Encouraging exercise for physical health and well-being",
+        "Supporting a healthy diet with fresh, balanced meals",
+        "Helping with household chores to keep the home tidy and safe",
+        "Providing companionship and accompanying your loved one to social events",
+        "Preparing a warm breakfast to help them start their day",
+        "Being a reassuring presence at night to ease anxiety"
+      ],
+      "benefits": "Our Care Experts are experienced and empathetic, specially trained in dementia care, and committed to maintaining your loved one's quality of life. This might mean being there for companionship and conversation, or simply providing the right level of support to encourage independence.",
+      "benefitsExtended": "We understand that every journey with dementia is unique, which is why our care plans are tailored to individual needs. Our approach brings professional support into your loved one's home, instead of moving them to a care facility, because remaining in familiar surroundings can make a world of difference.",
+      "gettingStarted": "If you're caring for someone with dementia and need extra support, we're here to help. We begin with a home visit to meet your loved one and understand their personality, preferences, and challenges. From there, we create a personalised support plan that adapts as their needs change.",
+      "gettingStartedPoints": [
+        "Home visit to understand personality, preferences, and challenges",
+        "Personalised support plan that adapts as needs change",
+        "Open communication and regular updates for families"
+      ],
+      "image": "/images/care-image-2.jpg",
+      "icon": "/images/icon-feature-1.svg",
+      "stats": [
+        { "number": "92", "suffix": "%", "label": "Family Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "15", "suffix": "+", "label": "Years Experience", "icon": "/images/icon-hero-benefit-3.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "4",
+      "name": "Live-in Care",
+      "slug": "live-in-care",
+      "category": "home-care",
+      "description": "Round-the-clock care with a dedicated caregiver living in your home, providing continuous support while allowing you to remain in familiar surroundings.",
+      "fullDescription": "Live-in care provides the highest level of home-based support with a dedicated care professional who lives in your home and provides around-the-clock assistance. This comprehensive service allows you to receive intensive care while remaining in the comfort and familiarity of your own home.",
+      "detailedDescription": "Our live-in care service is ideal for individuals who need continuous support but want to avoid residential care facilities. Your dedicated care professional becomes part of your household, providing personalized care, companionship, and peace of mind for both you and your family.",
+      "whatIs": "Live-in care means having a qualified care professional stay in your home to provide 24-hour support and assistance. This service offers the security of having help always available while maintaining your independence and staying in familiar surroundings with your belongings and memories nearby.",
+      "typicalVisit": "With live-in care, there are no typical visits—your care professional is there continuously. They adapt to your daily routines, provide assistance as needed throughout the day and night, and ensure you're never alone. The care is flexible and responds to your changing needs in real-time.",
+      "services": [
+        "24-hour availability for assistance and companionship",
+        "Personal care including bathing, dressing, and grooming",
+        "Medication management and health monitoring",
+        "Meal planning, preparation, and assistance with eating",
+        "Light housekeeping and home maintenance",
+        "Accompaniment to appointments and social activities",
+        "Overnight supervision and assistance",
+        "Emergency response and first aid",
+        "Emotional support and meaningful companionship"
+      ],
+      "benefits": "Live-in care provides unparalleled continuity of care and companionship. You receive personalized attention from someone who gets to know your preferences, routines, and needs intimately, creating a truly customized care experience that evolves with your changing requirements.",
+      "benefitsExtended": "This service eliminates the need for multiple carers and provides consistency that can be especially beneficial for individuals with dementia or complex health conditions. Families enjoy peace of mind knowing their loved one has continuous professional support.",
+      "gettingStarted": "Starting live-in care begins with a detailed assessment of your care needs, home environment, and personal preferences. We carefully match you with a live-in care professional whose personality, skills, and experience align with your requirements, ensuring a comfortable and successful care relationship.",
+      "gettingStartedPoints": [
+        "Detailed assessment of care needs and home environment",
+        "Careful matching with compatible live-in care professionals",
+        "Comprehensive care plans with 24-hour support"
+      ],
+      "image": "/images/feature-image-1.jpg",
+      "icon": "/images/icon-feature-2.svg",
+      "stats": [
+        { "number": "96", "suffix": "%", "label": "Client Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Continuous Care", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "5",
+      "name": "Respite Care",
+      "slug": "respite-care",
+      "category": "home-care",
+      "description": "Respite care gives you a well-earned break, knowing your loved one is in safe, capable, and compassionate hands.",
+      "fullDescription": "Respite care gives you a well-earned break, knowing your loved one is in safe, capable, and compassionate hands. Our dedicated Care Experts are carefully chosen, highly trained, and emotionally intelligent.",
+      "detailedDescription": "They take the time to understand your loved one's routines, preferences, and personality, ensuring their care feels seamless and reassuring. Whether for a few days or on a regular schedule, respite care helps you find balance. By caring for yourself, you're better able to care for those who matter most.",
+      "whatIs": "Respite care is temporary care provided to give primary caregivers a planned break from their caregiving responsibilities. We offer both Short-Term Respite Care—ideal for holidays, short trips, or when you simply need a few days to yourself, and Long-Term Respite Care—regular daily or weekly visits to give you consistent, planned breaks.",
+      "typicalVisit": "Respite care supports you just as much as your loved one. Stepping away for a short time allows you to rest and recharge your energy, catch up on sleep or personal errands, spend time with friends or family, focus on work or hobbies, and enjoy moments of quiet without worry.",
+      "services": [
+        "Companionship – From board games to shared TV shows",
+        "Outings – Coffee shops, local markets, or favourite places",
+        "Overnight care – For comfort and security through the night",
+        "Personal care – Bathing, dressing, stretching, or grooming",
+        "Meal preparation – Fresh, nutritious meals made at home",
+        "Household chores – Tidying, vacuuming, or light gardening",
+        "Shopping trips – For groceries, clothes, or small treats",
+        "Medication support – Collecting prescriptions and keeping track of doses",
+        "Short-term and long-term respite options available"
+      ],
+      "benefits": "Respite care helps prevent caregiver burnout and allows family caregivers to maintain their physical and emotional health. Throughout your break, you'll have peace of mind knowing your loved one is being supported by a professional who understands their needs.",
+      "benefitsExtended": "While we care for people of all ages, we have particular expertise in supporting older adults. For many, care is about more than practical help—it's about warmth, companionship, and meaningful connection. We're here to create moments of comfort and joy, as well as to provide essential support.",
+      "gettingStarted": "If you think respite care could be right for you, contact your local office today. We'll take the time to listen, understand your needs, and match you with a Care Expert who's the right fit for your family.",
+      "gettingStartedPoints": [
+        "Flexible scheduling to meet your respite needs",
+        "Care Experts who understand your loved one's routines and preferences",
+        "Both short-term and long-term respite care options available"
+      ],
+      "image": "/images/feature-image-2.jpg",
+      "icon": "/images/icon-feature-3.svg",
+      "stats": [
+        { "number": "94", "suffix": "%", "label": "Caregiver Relief", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "2", "suffix": " types", "label": "Respite Options", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "6",
+      "name": "Home Help and Housekeeping",
+      "slug": "home-help",
+      "category": "home-care",
+      "description": "Home help and housekeeping services form a vital part of supporting individuals who require assistance to live safely, comfortably, and with dignity in their own homes or care environments.",
+      "fullDescription": "Home help and housekeeping services form a vital part of supporting individuals who require assistance to live safely, comfortably, and with dignity in their own homes or care environments. These services go beyond simple cleaning—they encompass a holistic approach to maintaining a safe, healthy, and nurturing living space that promotes physical well-being, mental comfort, and overall quality of life.",
+      "detailedDescription": "In a care context, home help is not just about the physical tasks but also about fostering independence, security, and emotional comfort. By ensuring the environment is well-maintained, individuals are better able to move safely, avoid hazards, and feel at ease in their surroundings. Housekeepers and home helpers often develop trusted relationships with those they assist, offering companionship and an extra layer of social support alongside practical help.",
+      "whatIs": "Home help and housekeeping services provide comprehensive support to maintain a safe, clean, and comfortable living environment. Our scope of services includes four key areas: Laundry and Linen Care, Kitchen Hygiene and Support, Assistance with Shopping and Errands, and Meal Preparation Support.",
+      "typicalVisit": "Our home help professionals demonstrate key qualities including attention to detail, sensitivity and respect, reliability and consistency, and adaptability. Every visit is designed to foster independence while providing the practical support you need in a respectful and dignified manner.",
+      "services": [
+        "Laundry and Linen Care – Washing, drying, ironing, folding, and changing bed linens to ensure fresh and comfortable bedding and clothing",
+        "Kitchen Hygiene and Support – washing dishes and ensuring food storage areas are sanitary",
+        "Assistance with Shopping and Errands – Supporting individuals with grocery shopping, collecting prescriptions, and other essential errands",
+        "Meal Preparation Support – Preparing simple, nutritious meals and snacks according to dietary needs and preferences",
+        "Attention to Detail – Recognizing small changes in environment or habits that may indicate health concerns",
+        "Sensitivity and Respect – Understanding the importance of privacy, dignity, and personal choice",
+        "Reliability and Consistency – Building trust through punctuality and thorough work",
+        "Adaptability – Adjusting tasks to suit changing health needs and preferences",
+        "Companionship and social support during visits"
+      ],
+      "benefits": "Well-delivered home help and housekeeping services reduce stress, prevent accidents, and contribute to improved health outcomes. For elderly individuals, those with disabilities, or anyone recovering from illness, these services can mean the difference between struggling in daily life and living with independence and comfort.",
+      "benefitsExtended": "Our home helpers demonstrate key qualities of attention to detail—recognizing small changes that may indicate health or safety concerns, sensitivity and respect—understanding the importance of privacy, dignity, and personal choice, reliability and consistency—building trust through punctuality and thorough work, and adaptability—adjusting tasks and schedules to suit changing health needs, energy levels, and preferences.",
+      "gettingStarted": "We'll assess your home help needs and create a personalized plan that suits your lifestyle and preferences. Our team will match you with a home helper who understands your specific requirements and can provide the right level of support.",
+      "gettingStartedPoints": [
+        "Comprehensive assessment of home help and housekeeping needs",
+        "Personalized cleaning and maintenance schedules",
+        "Trusted and reliable home helpers with excellent references"
+      ],
+      "image": "/images/family-trust-image-2.jpg",
+      "icon": "/images/icon-service-1.svg",
+      "stats": [
+        { "number": "96", "suffix": "%", "label": "Client Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "4", "suffix": " areas", "label": "Service Scope", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "7",
+      "name": "Companionship Care",
+      "slug": "companionship-care",
+      "category": "home-care",
+      "description": "Staying connected with friends and family can be challenging as we grow older. Companionship care is about helping your loved ones remain confident, independent, and emotionally supported.",
+      "fullDescription": "When your dad is managing health issues or your mum no longer has the energy she once had, those connections can become even harder to maintain. This is a reality many families face, and it can have a big impact. A lack of social interaction can lead to feelings of stress, loneliness, and even depression.",
+      "detailedDescription": "Companionship care is about helping your loved ones remain confident, independent, and emotionally supported. It's not just about meeting practical needs — it's about building meaningful relationships, offering a friendly presence, and making sure they feel valued and connected every single day.",
+      "whatIs": "Companionship care helps your loved one maintain their independence at home with the support of a kind, friendly companion. It's more than simply lending a hand — it's about having someone to talk to, share memories with, and enjoy life alongside. Whether it's just a few hours a week or more frequent visits, our carers tailor their support to fit your loved one's lifestyle.",
+      "typicalVisit": "Our approach is rooted in friendship. We take time to learn about each person's interests, routines, and stories, so every visit feels personal and meaningful. A companion provides emotional support, conversation, and light assistance — perfect for those who don't need intensive personal or medical care but would benefit from company and encouragement.",
+      "services": [
+        "Reminiscing and sharing life stories",
+        "Helping with shopping trips",
+        "Cooking and enjoying meals together",
+        "Supporting hobbies — from sewing to birdwatching",
+        "Light household tasks, like emptying the dishwasher or replacing a lightbulb",
+        "Accompanying them to social events or appointments",
+        "Offering a steady hand for GP visits",
+        "Planning spontaneous outings that bring joy",
+        "Engaging conversation and active listening"
+      ],
+      "benefits": "We believe age should never be a barrier to happiness. Our companionship care is designed to help your loved one live a fulfilling, joyful life — all from the comfort of their own home. Companionship care significantly improves mental health and emotional well-being by reducing feelings of loneliness and isolation.",
+      "benefitsExtended": "Regular social interaction can improve cognitive function, boost mood, and provide a sense of purpose and connection. Having a regular companion can provide structure to the day, encourage engagement in activities, and offer emotional support during difficult times.",
+      "gettingStarted": "If this sounds like the kind of support your family could benefit from, contact your local office. We'd be delighted to explore how we can help your loved one feel more connected, engaged, and happy.",
+      "gettingStartedPoints": [
+        "Assessment of interests and social preferences",
+        "Matching with compatible companions who share similar interests",
+        "Flexible companionship tailored to your loved one's lifestyle"
+      ],
+      "image": "/images/family-trust-image-1.jpg",
+      "icon": "/images/icon-family-trust-1.svg",
+      "stats": [
+        { "number": "89", "suffix": "%", "label": "Reduced Loneliness", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "4", "suffix": "+", "label": "Hours Weekly", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "8",
+      "name": "Daytime Care",
+      "slug": "daytime-care",
+      "category": "home-care",
+      "description": "Daytime Care provides practical assistance, companionship, and reassurance during the hours your loved one needs it most.",
+      "fullDescription": "Daytime Care provides practical assistance, companionship, and reassurance during the hours your loved one needs it most. It's an ideal option for individuals who are largely independent but benefit from extra help and friendly company throughout the day.",
+      "detailedDescription": "Our carers can visit for just a few hours or stay for the full day, offering tailored support that fits your loved one's needs and routine. This means they can continue enjoying the comfort of home while still having a trusted professional on hand for both practical tasks and emotional support.",
+      "whatIs": "Daytime Care is flexible support during daytime hours for individuals who are largely independent but benefit from extra help and friendly company. Our carers provide assistance with daily activities, companionship, and practical support tailored to your routine.",
+      "typicalVisit": "With Daytime Care, your loved one gets the right amount of help to live a fulfilling day-to-day life, while you get the reassurance that they are safe, cared for, and happy. Each visit is designed around their specific needs and preferences.",
+      "services": [
+        "Personal care assistance – Help with washing, dressing, grooming, and mobility",
+        "Meal preparation – Cooking nutritious meals and snacks to suit dietary needs",
+        "Household support – Light cleaning, laundry, and keeping the home safe and tidy",
+        "Companionship – Friendly conversation, shared hobbies, and accompaniment to appointments",
+        "Medication reminders – Ensuring important medications are taken on time",
+        "Respite for family carers – Giving loved ones a well-earned break during the day",
+        "Activity engagement – Encouraging hobbies and meaningful activities",
+        "Safety monitoring throughout the day",
+        "Social interaction and emotional support"
+      ],
+      "benefits": "The benefits of Daytime Care include promoting independence where support is tailored to help, not take over, and providing reassurance that someone is there if help is needed during the day. It encourages activity and engagement, whether it's a walk in the park or a favourite game at home.",
+      "benefitsExtended": "Daytime Care supports well-being by reducing loneliness and giving peace of mind to families. It allows your loved one to maintain their independence while having professional support available when needed.",
+      "gettingStarted": "Contact us to discuss how Daytime Care could benefit your loved one. We'll assess their needs and create a flexible care plan that provides the right level of support during daytime hours.",
+      "gettingStartedPoints": [
+        "Flexible scheduling from a few hours to full day support",
+        "Tailored support that fits your loved one's needs and routine",
+        "Professional carers who provide both practical help and companionship"
+      ],
+      "image": "/images/member-experience-image-1.jpg",
+      "icon": "/images/icon-service-2.svg",
+      "stats": [
+        { "number": "93", "suffix": "%", "label": "Independence Maintained", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "8", "suffix": "+", "label": "Hours Available", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "9",
+      "name": "Live-in Care",
+      "slug": "live-in-care",
+      "category": "home-care",
+      "description": "For many families, the most appealing alternative to a care home is Live-in Care — because it allows your loved one to stay in the place they cherish most: their own home.",
+      "fullDescription": "With Live-in Care, your loved one receives one-to-one support from a dedicated Care Expert. The level and type of care are tailored entirely to their needs — whether they require ongoing assistance or short-term help during recovery.",
+      "detailedDescription": "This approach ensures they can keep their routines, stay in familiar surroundings, and continue living life on their own terms. Live-in Care offers something incredibly important: choice. The choice to wake up in your own bed, the choice to keep enjoying hobbies like birdwatching, gardening, or painting, and the choice to design a daily routine that feels natural and fulfilling.",
+      "whatIs": "Live-in Care means having a dedicated Care Expert living in your home, providing round-the-clock support tailored entirely to your needs. Whether it's long-term support for complex needs or short-term care after an operation, Live-in Care gives your loved one a voice in how their life is lived.",
+      "typicalVisit": "Live-in Care provides the perfect balance of practical help, companionship, and independence — all without leaving the comfort of home. Your Care Expert becomes part of your household, understanding your routines and preferences to provide seamless, personalized care.",
+      "services": [
+        "24-hour availability for assistance and companionship",
+        "Personal care including bathing, dressing, and grooming",
+        "Medication management and health monitoring",
+        "Meal planning, preparation, and assistance with eating",
+        "Light housekeeping and home maintenance",
+        "Accompaniment to appointments and social activities",
+        "Overnight supervision and assistance",
+        "Emergency response and first aid",
+        "Emotional support and meaningful companionship"
+      ],
+      "benefits": "Live-in Care allows you to stay in the comfort of your own home, surrounded by familiar belongings, keep your daily routines without disruption, enjoy genuine one-to-one attention, live each day independently, and keep beloved pets by your side.",
+      "benefitsExtended": "Our Live-in Care Experts aren't just highly skilled — they're carefully matched to your loved one's needs, personality, and interests. This ensures not only the right kind of support but also the right kind of connection. Every member of our team is fully trained and benefits from ongoing professional development.",
+      "gettingStarted": "Contact us to explore Live-in Care options. We'll conduct a detailed assessment of your care needs, home environment, and personal preferences to carefully match you with a Live-in Care Expert whose skills and experience align with your requirements.",
+      "gettingStartedPoints": [
+        "Detailed assessment of care needs, home environment, and preferences",
+        "Careful matching with compatible Live-in Care Experts",
+        "Comprehensive care plans with round-the-clock support"
+      ],
+      "image": "/images/feature-image-1.jpg",
+      "icon": "/images/icon-feature-2.svg",
+      "stats": [
+        { "number": "96", "suffix": "%", "label": "Client Satisfaction", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Continuous Care", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "10",
+      "name": "Alzheimer's Care",
+      "slug": "alzheimers-care",
+      "category": "specialist-care",
+      "description": "Alzheimer's disease is one of the most common causes of dementia, affecting over 520,000 people in the UK — most of them over 65. It's a progressive condition, meaning symptoms gradually worsen over time.",
+      "fullDescription": "While there's currently no cure, personalised care can help manage symptoms and maintain quality of life. Common early symptoms may include forgetting names of people or objects, difficulty finding the right words, and struggling with planning or decision-making.",
+      "detailedDescription": "As it progresses, other symptoms can develop, such as speech and language difficulties, changes in movement and coordination, personality changes and loss of confidence, and depression, anxiety, or hallucinations. Caring for someone with Alzheimer's can be demanding and emotional — but with the right support, you can ensure they remain safe, comfortable, and engaged.",
+      "whatIs": "We know from experience that remaining in familiar surroundings can make a world of difference for someone with Alzheimer's. That's why our approach brings professional support into your loved one's home, instead of moving them to a care facility.",
+      "typicalVisit": "Our Alzheimer's Care focuses on one-to-one support tailored to the individual, maintaining independence for as long as possible, stimulating memory with personalised activities like scrapbooking, and meeting physical, behavioural, and emotional needs with compassion.",
+      "services": [
+        "One-to-one support tailored to the individual",
+        "Maintaining independence for as long as possible",
+        "Stimulating memory with personalised activities like scrapbooking",
+        "Meeting physical, behavioural, and emotional needs with compassion",
+        "Memory stimulation and cognitive exercises",
+        "Personal care assistance with dignity and respect",
+        "Medication management and health monitoring",
+        "Safe environment maintenance and fall prevention",
+        "Companionship and emotional support"
+      ],
+      "benefits": "We begin with a home visit to meet your loved one and understand their personality, preferences, and challenges. From there, we create a personalised support plan that adapts as their needs change.",
+      "benefitsExtended": "We'll also take time to get to know you, ensuring open communication and regular updates so you always know how your loved one is doing. Our approach focuses on maintaining comfort, dignity, and quality of life throughout the progression of the condition.",
+      "gettingStarted": "If you're caring for someone with Alzheimer's or another form of dementia and need extra support, we're here to help. Contact us today to learn how our Dementia and Alzheimer's Care can bring reassurance to you and comfort to your loved one.",
+      "gettingStartedPoints": [
+        "Home visit to understand personality, preferences, and challenges",
+        "Personalised support plan that adapts as needs change",
+        "Open communication and regular updates for families"
+      ],
+      "image": "/images/about-us-image-1.jpg",
+      "icon": "/images/icon-service-3.svg",
+      "stats": [
+        { "number": "520", "suffix": "K+", "label": "People Affected UK", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Support Available", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "11",
+      "name": "Cancer Care",
+      "slug": "cancer-care",
+      "category": "specialist-care",
+      "description": "A cancer diagnosis can bring many challenges — physically, emotionally, and practically. Our Cancer Care at Home service is designed to provide personalised support so that your loved one can remain in the comfort and familiarity of their own home.",
+      "fullDescription": "We understand that every journey with cancer is unique. That's why our care plans are tailored to individual needs, whether that means help with daily tasks, emotional reassurance, or specialised care during treatment and recovery.",
+      "detailedDescription": "Our carers are trained, compassionate, and sensitive to the physical and emotional changes that come with cancer. We work closely with medical teams, hospices, and families to ensure care is consistent, dignified, and centred on the person's wishes.",
+      "whatIs": "Cancer Care at Home provides comfort, dignity, and support throughout the cancer journey. Our service enables individuals to receive the care they need while remaining in familiar surroundings, reducing stress and promoting emotional well-being.",
+      "typicalVisit": "Our goal is simple: to make every day as comfortable, calm, and positive as possible, giving you and your loved one peace of mind. We provide flexible support available for a few hours a week or around the clock.",
+      "services": [
+        "Personal care – Gentle assistance with washing, dressing, grooming, and mobility",
+        "Meal preparation and nutrition – Preparing nourishing meals and drinks to maintain energy",
+        "Medication reminders – Ensuring medicines are taken correctly and on time",
+        "Household support – Light cleaning, laundry, and keeping the home safe and comfortable",
+        "Transport and appointment support – Accompanying to hospital visits or treatment sessions",
+        "Emotional support and companionship – A friendly, listening ear to help ease stress",
+        "Palliative and end-of-life care – Working alongside healthcare professionals for comfort",
+        "Family support and involvement in care decisions",
+        "Symptom management and comfort care"
+      ],
+      "benefits": "The benefits of home-based cancer care include familiar surroundings that reduce stress and promote emotional well-being, one-to-one attention with tailored care from a dedicated carer, and flexibility with support available for a few hours a week or around the clock.",
+      "benefitsExtended": "Family involvement is encouraged, with loved ones able to be as involved as they wish, with professional support on hand. This approach ensures that care is consistent, dignified, and centred on the person's wishes and comfort.",
+      "gettingStarted": "Contact us to discuss how our Cancer Care at Home service can support you and your loved one during this challenging time. We'll create a personalised care plan that adapts to changing needs throughout the treatment journey.",
+      "gettingStartedPoints": [
+        "Personalised care plans tailored to individual cancer journey",
+        "Trained carers sensitive to physical and emotional changes",
+        "Collaboration with medical teams, hospices, and families"
+      ],
+      "image": "/images/about-us-image-2.jpg",
+      "icon": "/images/icon-service-4.svg",
+      "stats": [
+        { "number": "98", "suffix": "%", "label": "Comfort Achieved", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Care Available", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "12",
+      "name": "Parkinson's Care",
+      "slug": "parkinsons-care",
+      "category": "specialist-care",
+      "description": "Living with Parkinson's disease can bring daily challenges — from mobility changes to tremors, stiffness, and fatigue. Our Parkinson's Care at Home service is designed to provide the right support at the right time.",
+      "fullDescription": "Our service helps your loved one remain safe, comfortable, and as independent as possible in their own home. Because Parkinson's is progressive, we understand that needs can change over time.",
+      "detailedDescription": "That's why our care is flexible and personalised — adapting to your loved one's symptoms, routines, and lifestyle, so they can keep doing the things they enjoy for as long as possible. Our carers are trained to understand the specific challenges of Parkinson's, including how symptoms can vary throughout the day.",
+      "whatIs": "Parkinson's Care at Home provides support to live well every day despite the challenges of Parkinson's disease. Our care adapts to the progressive nature of the condition, focusing on maintaining safety, comfort, and independence at home.",
+      "typicalVisit": "We focus on preserving independence, promoting safety, and enhancing quality of life, so that every day can be lived with dignity and comfort. Our carers work closely with healthcare professionals and families to ensure your loved one's care plan is always up to date.",
+      "services": [
+        "Personal care assistance – Gentle help with washing, dressing, grooming, and toileting",
+        "Mobility support – Assistance with moving around safely, using walking aids, or getting in and out of chairs and bed",
+        "Medication reminders – Ensuring medicines are taken at the right time to manage symptoms effectively",
+        "Meal preparation – Cooking nutritious meals that are easy to eat and support overall health",
+        "Exercise encouragement – Supporting physiotherapy exercises to maintain flexibility, strength, and balance",
+        "Household help – Light cleaning, laundry, and keeping the home safe and hazard-free",
+        "Emotional support – A patient, understanding companion who offers encouragement and a listening ear",
+        "Respite care for family – Giving family carers time to rest while knowing their loved one is well looked after"
+      ],
+      "benefits": "The benefits include staying in familiar surroundings to reduce stress and maintain confidence, one-to-one support with care tailored to individual needs and delivered by a consistent, friendly face, flexibility with support from a few hours a week to 24/7 live-in care, and encouragement to stay active.",
+      "benefitsExtended": "Our approach helps your loved one continue hobbies, attend social activities, and remain engaged in life. We understand that Parkinson's symptoms can vary throughout the day and adapt our care accordingly to preserve independence and promote safety.",
+      "gettingStarted": "Contact us to discuss how Parkinson's Care at Home can support your loved one. We'll assess their specific needs and create a flexible care plan that promotes independence while ensuring safety and comfort.",
+      "gettingStartedPoints": [
+        "Assessment of specific Parkinson's symptoms and daily challenges",
+        "Flexible care plans that adapt to changing symptoms throughout the day",
+        "Carers trained in Parkinson's-specific care techniques and understanding"
+      ],
+      "image": "/images/fact-image-1.jpg",
+      "icon": "/images/icon-service-5.svg",
+      "stats": [
+        { "number": "94", "suffix": "%", "label": "Independence Maintained", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "100", "suffix": "%", "label": "Trained Carers", "icon": "/images/icon-hero-benefit-3.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "13",
+      "name": "Neurological Care",
+      "slug": "neurological-care",
+      "category": "specialist-care",
+      "description": "Neurological conditions can affect movement, speech, memory, and overall independence, often making daily life more challenging. Our Neurological Care at Home service provides skilled, personalised support.",
+      "fullDescription": "Our service is designed so your loved one can remain in the place they know best — their home — while receiving care that meets their specific needs. We care for people living with a wide range of neurological conditions.",
+      "detailedDescription": "Because each condition is different, our care is always tailored — adapting as needs change, and focusing on maintaining independence and quality of life for as long as possible. Our carers receive specialist training in neurological care and understand the complexities and emotional impact of these conditions.",
+      "whatIs": "We provide specialist support for complex neurological conditions including Multiple sclerosis (MS), Motor neurone disease (MND/ALS), Parkinson's disease, Stroke recovery, Epilepsy, Huntington's disease, Brain and spinal injuries, and other degenerative or acquired neurological conditions.",
+      "typicalVisit": "We work closely with healthcare professionals, therapists, and families to create a holistic care plan that supports physical needs, mental well-being, and personal preferences. Our goal is to help your loved one live as fully, safely, and comfortably as possible.",
+      "services": [
+        "Personal care – Assistance with washing, dressing, grooming, and toileting, always delivered with dignity",
+        "Mobility and transfer support – Help moving safely around the home, including using hoists or mobility aids",
+        "Medication management – Reminders or administration as prescribed to manage symptoms",
+        "Meal preparation – Cooking nutritious meals that suit dietary needs and promote overall health",
+        "Physio and exercise support – Encouragement to follow prescribed exercises to maintain strength and flexibility",
+        "Household help – Light cleaning, laundry, and keeping the home organised and hazard-free",
+        "Communication support – Assistance with speech aids or techniques to make communication easier",
+        "Companionship – A friendly presence for conversation, emotional support, and encouragement",
+        "Palliative care – Sensitive, compassionate end-of-life care when needed"
+      ],
+      "benefits": "Benefits include familiar surroundings that reduce stress and confusion, especially for those with cognitive symptoms, one-to-one attention from a consistent, trusted professional, flexible support from a few hours a week to full-time live-in care, and family reassurance.",
+      "benefitsExtended": "Knowing your loved one is receiving skilled, compassionate support gives families the peace of mind they deserve. Our specialist training ensures we understand the unique challenges of each neurological condition and can adapt our approach accordingly.",
+      "gettingStarted": "Contact us to discuss how our Neurological Care at Home can support your loved one's specific condition. We'll create a comprehensive care plan that addresses both medical needs and personal preferences.",
+      "gettingStartedPoints": [
+        "Specialist assessment of neurological care needs and condition-specific requirements",
+        "Holistic care plans supporting physical needs, mental well-being, and personal preferences",
+        "Carers with specialist neurological care training and ongoing professional development"
+      ],
+      "image": "/images/fact-image-2.jpg",
+      "icon": "/images/icon-service-6.svg",
+      "stats": [
+        { "number": "8", "suffix": "+", "label": "Conditions Supported", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "24", "suffix": "/7", "label": "Specialist Care", "icon": "/images/icon-hero-benefit-1.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "14",
+      "name": "Palliative Care",
+      "slug": "palliative-care",
+      "category": "specialist-care",
+      "description": "Palliative care is about much more than managing physical symptoms — it's about supporting the whole person and their loved ones during a difficult stage of life.",
+      "fullDescription": "Our Palliative Care at Home service enables individuals with life-limiting or terminal illnesses to remain in the comfort and familiarity of their own home, surrounded by the people and memories that matter most.",
+      "detailedDescription": "We focus on relieving pain, managing symptoms, and offering emotional and practical support to ensure every day is as comfortable, calm, and meaningful as possible. Our carers are specially trained in palliative and end-of-life care.",
+      "whatIs": "Palliative Care at Home provides comfort, dignity, and compassion for individuals with life-limiting or terminal illnesses, enabling them to remain in familiar surroundings while receiving professional medical and emotional support.",
+      "typicalVisit": "We work closely with nurses, doctors, and hospices to deliver consistent, high-quality care. We listen carefully to the wishes of both the individual and their family, creating a care plan that reflects personal preferences and focuses on comfort, reassurance, and dignity.",
+      "services": [
+        "Pain and symptom management – Working alongside healthcare professionals to keep your loved one comfortable",
+        "Personal care – Gentle assistance with washing, dressing, grooming, and toileting",
+        "Emotional support – A compassionate presence for both the individual and their family",
+        "Medication assistance – Ensuring medications are taken correctly and on time",
+        "Nutritional support – Preparing meals and drinks suited to changing tastes and needs",
+        "Household help – Light cleaning, laundry, and maintaining a calm, tidy environment",
+        "Respite care – Giving family carers a chance to rest while knowing their loved one is in safe hands",
+        "End-of-life care – Sensitive support to ensure dignity, peace, and comfort in the final days"
+      ],
+      "benefits": "Benefits include familiar surroundings that provide comfort and reduce stress during sensitive times, one-to-one attention with care tailored entirely to the person's needs and wishes, family involvement with loved ones closely supported by professional guidance, and a holistic approach supporting physical, emotional, and spiritual well-being.",
+      "benefitsExtended": "Our approach combines compassion, patience, and dignity, helping families feel supported every step of the way. We understand the importance of personal preferences and work to ensure comfort and meaningful moments.",
+      "gettingStarted": "Contact us to discuss how our Palliative Care at Home can provide comfort and support during this difficult time. We'll work with you to create a compassionate care plan.",
+      "gettingStartedPoints": [
+        "Specialist palliative and end-of-life care training for all carers",
+        "Collaborative approach working with healthcare professionals and hospices",
+        "Personalized care plans reflecting individual and family wishes"
+      ],
+      "image": "/images/care-image-1.jpg",
+      "icon": "/images/icon-service-7.svg",
+      "stats": [
+        { "number": "100", "suffix": "%", "label": "Dignity Focused", "icon": "/images/icon-hero-benefit-1.svg" },
+        { "number": "24", "suffix": "/7", "label": "Compassionate Care", "icon": "/images/icon-hero-benefit-2.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "15",
+      "name": "Arthritis & Mobility Care",
+      "slug": "arthritis-mobility-care",
+      "category": "specialist-care",
+      "description": "Living with arthritis or reduced mobility can make even simple day-to-day tasks challenging. Our Arthritis and Mobility Care at Home service gives you the practical help, encouragement, and confidence needed to stay active, safe, and independent.",
+      "fullDescription": "We understand that arthritis affects everyone differently — from occasional stiffness to constant pain — and mobility needs can change over time. That's why our care is personalised, adapting to your unique situation and daily routines.",
+      "detailedDescription": "Our carers are trained to understand the limitations and challenges that come with arthritis and mobility issues. We focus on maximising independence, reducing discomfort, and building confidence so that life at home can remain fulfilling and safe.",
+      "whatIs": "Arthritis & Mobility Care at Home provides specialized support for individuals dealing with arthritis, joint pain, or mobility challenges, helping them maintain independence and quality of life in familiar surroundings.",
+      "typicalVisit": "By combining practical support with genuine companionship, we help each person continue enjoying the activities and moments that matter most — whether that's gardening, knitting, or simply moving comfortably around the home.",
+      "services": [
+        "Personal care – Gentle help with washing, dressing, grooming, and toileting",
+        "Mobility support – Assistance with moving around the home, using walking aids, or transferring safely",
+        "Exercise encouragement – Supporting gentle, low-impact exercises or physiotherapy routines",
+        "Pain management support – Ensuring prescribed treatments, heat packs, or comfort measures are used correctly",
+        "Household assistance – Help with cleaning, laundry, meal preparation, and keeping the home safe",
+        "Shopping and errands – Picking up groceries, prescriptions, or running other errands",
+        "Companionship – Providing a friendly, understanding presence for conversation and emotional support",
+        "Transport assistance – Helping attend appointments, social outings, or community activities"
+      ],
+      "benefits": "Benefits include staying in familiar surroundings to reduce stress and make movement easier, one-to-one support tailored to individual pace and comfort level, encouragement to stay active and maintain mobility, and peace of mind knowing a trained professional provides both safety and companionship.",
+      "benefitsExtended": "Our specialized approach helps maintain confidence and independence while managing the daily challenges of arthritis and mobility issues. We adapt our support to changing needs and focus on what matters most to each individual.",
+      "gettingStarted": "Contact us to discuss how our Arthritis & Mobility Care can help you or your loved one stay active and independent at home. We'll assess your specific needs and create a supportive care plan.",
+      "gettingStartedPoints": [
+        "Specialized training in arthritis and mobility support techniques",
+        "Personalized care adapting to changing mobility needs and comfort levels",
+        "Focus on maximizing independence while ensuring safety and wellbeing"
+      ],
+      "image": "/images/feature-image-2.jpg",
+      "icon": "/images/icon-service-8.svg",
+      "stats": [
+        { "number": "95", "suffix": "%", "label": "Mobility Maintained", "icon": "/images/icon-hero-benefit-2.svg" },
+        { "number": "100", "suffix": "%", "label": "Specialized Training", "icon": "/images/icon-hero-benefit-3.svg" }
+      ],
+      "active": true
+    },
+    {
+      "id": "16",
+      "name": "Diabetes Care",
+      "slug": "diabetes-care",
+      "category": "specialist-care",
+      "description": "Living with diabetes can be challenging, especially when it comes to managing daily routines, diet, and medication. Our Diabetes Care at Home service is designed to help you or your loved one maintain good health, prevent complications, and live life with confidence — all from the comfort of home.",
+      "fullDescription": "We understand that every person's experience with diabetes is different, whether it's Type 1, Type 2, or gestational diabetes. That's why our care is personalised to fit each individual's medical needs, lifestyle, and preferences.",
+      "detailedDescription": "Our carers are trained in diabetes awareness and care, understanding the importance of timing, diet, and monitoring. We work closely with healthcare professionals and families to ensure every aspect of care is aligned with medical advice.",
+      "whatIs": "Diabetes Care at Home provides specialized support for individuals living with Type 1, Type 2, or gestational diabetes, focusing on daily management, health monitoring, and complication prevention in familiar home surroundings.",
+      "typicalVisit": "Whether it's a few hours a week or daily visits, our goal is to help you or your loved one stay well, independent, and confident while living with diabetes. We focus on consistent support to maintain stable blood sugar levels and healthy routines.",
+      "services": [
+        "Medication support – Reminders or assistance with insulin administration and other prescribed treatments",
+        "Blood sugar monitoring – Helping to check and record glucose levels as recommended",
+        "Dietary guidance – Preparing balanced meals and snacks that support healthy blood sugar levels",
+        "Exercise encouragement – Assisting with gentle activities or physiotherapy to improve circulation and overall health",
+        "Foot care – Monitoring for signs of sores, cuts, or infections to prevent complications",
+        "Household help – Light cleaning, laundry, and keeping the home organised and safe",
+        "Education and encouragement – Helping your loved one understand their condition and make informed daily choices",
+        "Companionship and emotional support – Providing a friendly face and reassurance to reduce stress"
+      ],
+      "benefits": "Benefits include better health management with consistent support to help maintain stable blood sugar levels, familiar environment that reduces stress and helps stick to established routines, one-to-one attention with care tailored to specific needs and preferences, and prevention-focused approach reducing the risk of complications through daily monitoring and healthy lifestyle support.",
+      "benefitsExtended": "Our specialized diabetes care approach combines medical awareness with compassionate support, helping individuals maintain independence while managing their condition effectively. We understand the daily challenges and provide both practical assistance and emotional encouragement.",
+      "gettingStarted": "Contact us to discuss how our Diabetes Care at Home can support you or your loved one's specific diabetes management needs. We'll work with you and healthcare professionals to create a comprehensive care plan.",
+      "gettingStartedPoints": [
+        "Specialized diabetes awareness training for all carers",
+        "Personalized care plans for Type 1, Type 2, or gestational diabetes",
+        "Collaboration with healthcare professionals and families for comprehensive care"
+      ],
+      "image": "/images/care-image-2.jpg",
+      "icon": "/images/icon-service-9.svg",
+      "stats": [
+        { "number": "96", "suffix": "%", "label": "Health Stability", "icon": "/images/icon-hero-benefit-1.svg" },
+        { "number": "100", "suffix": "%", "label": "Diabetes Training", "icon": "/images/icon-hero-benefit-2.svg" }
+      ],
+      "active": true
+    }
+  ]
+}
