@@ -76,6 +76,10 @@ router
       '/services/availability/:availabilityId',
       '#controllers/services_controller.removeAvailabilityLocation'
     )
+    // Add zipcodes to a specific service
+    router.post('/services/:id/zipcodes', '#controllers/services_controller.addZipcodes')
+    // Remove a specific zipcode from a service
+    router.delete('/services/:id/zipcodes', '#controllers/services_controller.removeZipcode')
     // Keep create/update/delete protected; remove index/show from this resource
     router.resource('/services', '#controllers/services_controller').except(['index', 'show'])
 

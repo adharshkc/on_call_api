@@ -1,5 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Service from '#models/service'
+import { addZipcodesValidator } from '#validators/zipcode'
 
 export default class ServicesController {
   /**
@@ -18,7 +19,13 @@ export default class ServicesController {
     console.log('🔍 Checking availability for zipcode:', zipcode, 'and serviceId:', serviceId)
 
     try {
-      const normalizedZipcode = zipcode.toString().trim()
+      const normalizedZipcode = this.normalizeZipcode(zipcode)
+
+      if (!normalizedZipcode) {
+        return response.status(400).json({
+          message: 'Zipcode is required or contains no valid characters',
+        })
+      }
 
       let query = Service.query()
 
@@ -33,7 +40,9 @@ export default class ServicesController {
         .orderBy('name', 'asc')
         .exec()
 
-      console.log(services)
+      // return services
+
+      // console.log(services)
       if (services.length > 0) {
         return response.json({
           message: 'Services available for this zipcode',
@@ -84,6 +93,18 @@ export default class ServicesController {
       zipcodes: service.zipcodes,
       isActive: service.isActive,
     }
+  }
+
+  /**
+   * Normalize a zipcode: remove all whitespace, strip non-alphanumeric characters,
+   * and convert to uppercase. Returns an empty string if input is falsy.
+   */
+  private normalizeZipcode(zip: any): string {
+    if (zip === undefined || zip === null) return ''
+    return String(zip)
+      .replace(/\s+/g, '')
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .toUpperCase()
   }
 
   /**
@@ -206,10 +227,10 @@ export default class ServicesController {
           }
         }
 
-        // Final cleanup and normalization
+        // Final cleanup and normalization using helper (remove spaces/special chars)
         serviceData.zipcodes = flattenedZipcodes
-          .filter((zip) => zip && zip !== 'NULL' && zip !== 'null' && zip.toString().trim() !== '')
-          .map((zip: string) => zip.toString().trim().toUpperCase())
+          .map((zip: any) => this.normalizeZipcode(zip))
+          .filter((zip: string) => zip !== '')
       }
 
       // Handle null values properly (but skip zipcodes since we handled it above)
@@ -434,10 +455,10 @@ export default class ServicesController {
           }
         }
 
-        // Final cleanup and normalization
+        // Final cleanup and normalization using helper (remove spaces/special chars)
         const finalZipcodes = flattenedZipcodes
-          .filter((zip) => zip && zip !== 'NULL' && zip !== 'null' && zip.toString().trim() !== '')
-          .map((zip: string) => zip.toString().trim().toUpperCase())
+          .map((zip: any) => this.normalizeZipcode(zip))
+          .filter((zip: string) => zip !== '')
 
         console.log('🎯 DEBUG - Final zipcodes:', finalZipcodes)
         data.zipcodes = JSON.stringify(finalZipcodes)
@@ -553,6 +574,159 @@ export default class ServicesController {
     } catch (error) {
       return response.status(500).json({
         message: 'Error deleting service',
+        error: error.message,
+      })
+    }
+  }
+
+  /**
+   * Add zipcodes to a service (admin only)
+   * Accepts an array of zipcodes and validates them
+   */
+  async addZipcodes({ params, request, response }: HttpContext) {
+    try {
+      const service = await Service.find(params.id)
+
+      if (!service) {
+        return response.status(404).json({
+          message: 'Service not found',
+        })
+      }
+
+      // Validate request using vine validator
+      const data = await request.validateUsing(addZipcodesValidator)
+      const { zipcodes } = data
+
+      // Normalize zipcodes (remove spaces/special chars and uppercase)
+      const normalizedZipcodes = zipcodes
+        .map((zipcode: any) => this.normalizeZipcode(zipcode))
+        .filter((z: string) => z !== '')
+
+      // Get existing zipcodes
+      let existingZipcodes: string[] = []
+      if (service.zipcodes) {
+        try {
+          if (typeof service.zipcodes === 'string') {
+            existingZipcodes = JSON.parse(service.zipcodes)
+          } else if (Array.isArray(service.zipcodes)) {
+            existingZipcodes = service.zipcodes
+          }
+        } catch {
+          existingZipcodes = []
+        }
+      }
+
+      // Normalize existing zipcodes (remove spaces/special chars and uppercase)
+      existingZipcodes = existingZipcodes
+        .map((zip) => this.normalizeZipcode(zip))
+        .filter((z: string) => z !== '')
+
+      // Merge and deduplicate
+      const mergedZipcodes = [...new Set([...existingZipcodes, ...normalizedZipcodes])]
+
+      // Calculate what was actually added (new zipcodes only)
+      const addedZipcodes = normalizedZipcodes.filter((zip) => !existingZipcodes.includes(zip))
+      const duplicateZipcodes = normalizedZipcodes.filter((zip) => existingZipcodes.includes(zip))
+
+      // Update service with new zipcodes
+      service.zipcodes = JSON.stringify(mergedZipcodes) as any
+      await service.save()
+
+      return response.json({
+        message: 'Zipcodes processed successfully',
+        data: {
+          totalZipcodes: mergedZipcodes.length,
+          addedCount: addedZipcodes.length,
+          duplicateCount: duplicateZipcodes.length,
+          added: addedZipcodes,
+          duplicates: duplicateZipcodes,
+          allZipcodes: mergedZipcodes,
+        },
+      })
+    } catch (error) {
+      return response.status(500).json({
+        message: 'Error adding zipcodes to service',
+        error: error.message,
+      })
+    }
+  }
+
+  /**
+   * Remove a specific zipcode from a service (admin only)
+   */
+  async removeZipcode({ params, request, response }: HttpContext) {
+    try {
+      const service = await Service.find(params.id)
+
+      if (!service) {
+        return response.status(404).json({
+          message: 'Service not found',
+        })
+      }
+
+      const { zipcode } = request.only(['zipcode'])
+
+      // Validate that zipcode is provided
+      if (!zipcode) {
+        return response.status(400).json({
+          message: 'Zipcode is required',
+        })
+      }
+
+      // Normalize zipcode (remove spaces/special chars and uppercase)
+      const normalizedZipcode = this.normalizeZipcode(zipcode)
+
+      if (!normalizedZipcode) {
+        return response.status(400).json({
+          message: 'Zipcode must contain letters and/or numbers',
+        })
+      }
+
+      // Get existing zipcodes
+      let existingZipcodes: string[] = []
+      if (service.zipcodes) {
+        try {
+          if (typeof service.zipcodes === 'string') {
+            existingZipcodes = JSON.parse(service.zipcodes)
+          } else if (Array.isArray(service.zipcodes)) {
+            existingZipcodes = service.zipcodes
+          }
+        } catch {
+          existingZipcodes = []
+        }
+      }
+
+      // Normalize existing zipcodes (remove spaces/special chars and uppercase)
+      existingZipcodes = existingZipcodes
+        .map((zip) => this.normalizeZipcode(zip))
+        .filter((z: string) => z !== '')
+
+      // Check if zipcode exists
+      if (!existingZipcodes.includes(normalizedZipcode)) {
+        return response.status(404).json({
+          message: 'Zipcode not found in service',
+          zipcode: normalizedZipcode,
+        })
+      }
+
+      // Remove the zipcode
+      const updatedZipcodes = existingZipcodes.filter((zip) => zip !== normalizedZipcode)
+
+      // Update service
+      service.zipcodes = JSON.stringify(updatedZipcodes) as any
+      await service.save()
+
+      return response.json({
+        message: 'Zipcode removed successfully',
+        data: {
+          removedZipcode: normalizedZipcode,
+          remainingCount: updatedZipcodes.length,
+          remainingZipcodes: updatedZipcodes,
+        },
+      })
+    } catch (error) {
+      return response.status(500).json({
+        message: 'Error removing zipcode from service',
         error: error.message,
       })
     }
