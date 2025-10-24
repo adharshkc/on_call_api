@@ -55,6 +55,14 @@ router
     // Location management routes
     router.get('/locations/autocomplete', '#controllers/locations_controller.autocomplete')
     router.get('/locations/postcodes', '#controllers/locations_controller.getPostcodesFromGeoapify')
+    router.get(
+      '/locations/postcodes/geonames',
+      '#controllers/locations_controller.getPostcodesFromGeoNames'
+    )
+    router.get(
+      '/locations/postcodes/geonames/grouped',
+      '#controllers/locations_controller.getGroupedPostcodesFromGeoNames'
+    )
     router.get('/locations/search', '#controllers/locations_controller.search')
     router.get('/locations/:id/postcodes', '#controllers/locations_controller.getPostcodes')
     router.resource('/locations', '#controllers/locations_controller')

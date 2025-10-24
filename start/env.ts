@@ -58,4 +58,12 @@ export default await Env.create(new URL('../', import.meta.url), {
   */
   GEOAPIFY_API_KEY: Env.schema.string.optional(),
   GEOAPIFY_BASE_URL: Env.schema.string.optional(),
+
+  /*
+  |----------------------------------------------------------
+  | GeoNames configuration
+  |----------------------------------------------------------
+  */
+  GEONAMES_USERNAME: Env.schema.string.optional(),
+  GEONAMES_BASE_URL: Env.schema.string.optional(),
 })

@@ -2,6 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 import Location from '#models/location'
 import Database from '@adonisjs/lucid/services/db'
 import GeoapifyService from '#services/geoapify_service'
+import GeoNamesService from '#services/geonames_service'
 
 export default class LocationsController {
   /**
@@ -136,6 +137,134 @@ export default class LocationsController {
     } catch (error: any) {
       return response.status(502).json({
         message: 'Failed to fetch postcodes from Geoapify',
+        error: error?.message || 'Unknown error',
+      })
+    }
+  }
+
+  /**
+   * Get postcodes using GeoNames API (better coverage than Geoapify)
+   * GET /api/locations/postcodes/geonames?placeName=Manchester&countryCode=GB&maxRows=100
+   * OR
+   * GET /api/locations/postcodes/geonames?lat=53.4808&lng=-2.2426&radius=10&countryCode=GB
+   */
+  async getPostcodesFromGeoNames({ request, response }: HttpContext) {
+    const placeName = request.qs().placeName as string
+    const lat = request.qs().lat ? Number.parseFloat(request.qs().lat as string) : null
+    const lng = request.qs().lng ? Number.parseFloat(request.qs().lng as string) : null
+    const radius = Number.parseInt(request.qs().radius as string) || 10 // default 10km
+    const maxRows = Number.parseInt(request.qs().maxRows as string) || 100
+    const countryCode = (request.qs().countryCode as string) || 'GB'
+
+    try {
+      let postalCodes: any[] = []
+
+      // If lat/lng provided, use nearby search
+      if (lat && lng && !Number.isNaN(lat) && !Number.isNaN(lng)) {
+        postalCodes = await GeoNamesService.getPostalCodesNearby(lat, lng, {
+          radius,
+          maxRows,
+          countryCode,
+        })
+      }
+      // Otherwise use place name search
+      else if (placeName && placeName.trim().length > 0) {
+        postalCodes = await GeoNamesService.getPostalCodesByPlace(placeName, {
+          countryCode,
+          maxRows,
+        })
+      } else {
+        return response.status(400).json({
+          message: 'Either placeName or (lat and lng) are required',
+          data: [],
+        })
+      }
+
+      // Extract unique postal codes and format response
+      const uniquePostalCodes = new Set<string>()
+      const detailedPostalCodes: any[] = []
+
+      for (const pc of postalCodes) {
+        if (!uniquePostalCodes.has(pc.postalCode)) {
+          uniquePostalCodes.add(pc.postalCode)
+          detailedPostalCodes.push({
+            postcode: pc.postalCode,
+            placeName: pc.placeName,
+            county: pc.adminName2,
+            state: pc.adminName1,
+            lat: pc.lat,
+            lng: pc.lng,
+            displayName: `${pc.postalCode} - ${pc.placeName}`,
+          })
+        }
+      }
+
+      return response.json({
+        message: 'Postcodes retrieved successfully from GeoNames',
+        data: detailedPostalCodes,
+        meta: {
+          placeName: placeName || undefined,
+          lat: lat || undefined,
+          lng: lng || undefined,
+          radius: lat && lng ? radius : undefined,
+          countryCode,
+          count: detailedPostalCodes.length,
+          source: 'geonames',
+        },
+      })
+    } catch (error: any) {
+      console.log('Error in getPostcodesFromGeoNames:', error)
+      return response.status(502).json({
+        message: 'Failed to fetch postcodes from GeoNames',
+        error: error?.message || 'Unknown error',
+      })
+    }
+  }
+
+  /**
+   * Get postal codes for a city/county with grouped results
+   * GET /api/locations/postcodes/geonames/grouped?placeName=Manchester&countryCode=GB
+   */
+  async getGroupedPostcodesFromGeoNames({ request, response }: HttpContext) {
+    const placeName = request.qs().placeName as string
+    const countryCode = (request.qs().countryCode as string) || 'GB'
+    const maxRows = Number.parseInt(request.qs().maxRows as string) || 500
+
+    if (!placeName || placeName.trim().length < 2) {
+      return response.status(400).json({
+        message: 'Place name must be at least 2 characters',
+        data: [],
+      })
+    }
+
+    try {
+      const locations = await GeoNamesService.searchPlaceWithPostalCodes(placeName, {
+        countryCode,
+        maxRows,
+      })
+
+      return response.json({
+        message: 'Grouped postal codes retrieved successfully',
+        data: locations.map((loc) => ({
+          placeName: loc.placeName,
+          county: loc.adminName2,
+          state: loc.adminName1,
+          lat: loc.lat,
+          lng: loc.lng,
+          postcodes: loc.postalCodes,
+          postcodeCount: loc.postalCodes.length,
+        })),
+        meta: {
+          placeName,
+          countryCode,
+          locationCount: locations.length,
+          totalPostcodes: locations.reduce((sum, loc) => sum + loc.postalCodes.length, 0),
+          source: 'geonames',
+        },
+      })
+    } catch (error: any) {
+      return response.status(502).json({
+        message: 'Failed to fetch grouped postcodes from GeoNames',
         error: error?.message || 'Unknown error',
       })
     }
