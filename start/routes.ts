@@ -28,6 +28,9 @@ router.post('/api/contact', '#controllers/contact_form_controller.store')
 router.get('/api/services', '#controllers/services_controller.index')
 router.get('/api/services/:id', '#controllers/services_controller.show')
 
+// Public settings routes (for frontend to get popup config, etc.)
+router.get('/api/settings/:key/value', '#controllers/settings_controller.getValue')
+
 // Admin authentication routes
 router
   .group(() => {
@@ -98,6 +101,13 @@ router
     router.get('/contacts/:id', '#controllers/contact_form_controller.show')
     router.put('/contacts/:id', '#controllers/contact_form_controller.update')
     router.delete('/contacts/:id', '#controllers/contact_form_controller.destroy')
+
+    // Settings management routes (admin only)
+    router.get('/settings', '#controllers/settings_controller.index')
+    router.get('/settings/:key', '#controllers/settings_controller.show')
+    router.post('/settings', '#controllers/settings_controller.store')
+    router.put('/settings/:key', '#controllers/settings_controller.update')
+    router.delete('/settings/:key', '#controllers/settings_controller.destroy')
   })
   .prefix('/api/')
   .use(middleware.auth())
