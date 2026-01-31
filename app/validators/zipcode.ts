@@ -11,7 +11,7 @@ export const addZipcodesValidator = vine.compile(
           .string()
           .trim()
           .minLength(1)
-          .regex(/^[a-zA-Z0-9]+$/)
+          .regex(/^[a-zA-Z0-9\s-]+$/)
       )
       .minLength(1),
   })

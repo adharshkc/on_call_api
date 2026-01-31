@@ -17,6 +17,9 @@ export default class ServiceAvailability extends BaseModel {
   @column()
   declare postcode: string
 
+  @column({ columnName: 'postcode_search' })
+  declare postcodeSearch: string
+
   @column()
   declare isActive: boolean
 

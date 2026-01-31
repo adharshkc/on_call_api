@@ -1,11 +1,12 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Service from '#models/service'
+import db from '@adonisjs/lucid/services/db'
 import { addZipcodesValidator } from '#validators/zipcode'
 
 export default class ServicesController {
   /**
    * Check service availability by zipcode (for customers)
-   * Simple search through services that contain the zipcode
+   * Search through ServiceAvailability table that contains the zipcode
    */
   async checkAvailability({ request, response }: HttpContext) {
     const { postcode, serviceId } = request.only(['postcode', 'serviceId'])
@@ -19,37 +20,96 @@ export default class ServicesController {
     console.log('🔍 Checking availability for zipcode:', zipcode, 'and serviceId:', serviceId)
 
     try {
+      // Normalize input: remove spaces/special chars and uppercase
       const normalizedZipcode = this.normalizeZipcode(zipcode)
-
       if (!normalizedZipcode) {
         return response.status(400).json({
           message: 'Zipcode is required or contains no valid characters',
         })
       }
+      // Derive UK postcode matching tiers
+      const tokens = this.getUkPostcodeTokens(normalizedZipcode)
 
-      let query = Service.query()
+      // Helper to run a search with a pattern on postcode_search
+      const runSearch = async (pattern: string, exact: boolean) => {
+        const qb = db
+          .from('service_availabilities')
+          .leftJoin('services as s', 'service_availabilities.service_id', 's.id')
+          .distinct('service_availabilities.service_id')
+          .select(
+            'service_availabilities.service_id as service_id',
+            's.name',
+            's.description',
+            's.slug'
+          )
 
-      if (serviceId) {
-        query = query.where('id', serviceId)
+        if (exact) {
+          qb.where('service_availabilities.postcode_search', pattern)
+        } else {
+          qb.where('service_availabilities.postcode_search', 'like', `${pattern}%`)
+        }
+
+        if (serviceId) {
+          qb.where('service_availabilities.service_id', serviceId)
+        }
+
+        return qb
       }
 
-      // Search for services that have this zipcode in their zipcodes array
-      // Using JSON_CONTAINS for MySQL or similar for other databases
-      const services = await query
-        .whereRaw('JSON_CONTAINS(zipcodes, ?)', [`"${normalizedZipcode}"`])
-        .orderBy('name', 'asc')
-        .exec()
+      // 1) Full Code (specific override)
+      if (tokens.full) {
+        const rowsFull = await runSearch(tokens.full, true)
+        if (rowsFull.length > 0) {
+          return response.json({
+            message: 'Services available for this zipcode',
+            available: true,
+            zipcode: normalizedZipcode,
+            matchLevel: 'full',
+            data: rowsFull,
+          })
+        }
+      }
 
-      // return services
+      // 2) Sector (e.g., SW1A1)
+      if (tokens.sector) {
+        const rowsSector = await runSearch(tokens.sector, false)
+        if (rowsSector.length > 0) {
+          return response.json({
+            message: 'Services available for this zipcode',
+            available: true,
+            zipcode: normalizedZipcode,
+            matchLevel: 'sector',
+            data: rowsSector,
+          })
+        }
+      }
 
-      // console.log(services)
-      if (services.length > 0) {
-        return response.json({
-          message: 'Services available for this zipcode',
-          available: true,
-          zipcode: normalizedZipcode,
-          data: services.map((service) => this.formatServiceResponse(service)),
-        })
+      // 3) Outward Code (e.g., SW1A)
+      if (tokens.outward) {
+        const rowsOutward = await runSearch(tokens.outward, false)
+        if (rowsOutward.length > 0) {
+          return response.json({
+            message: 'Services available for this zipcode',
+            available: true,
+            zipcode: normalizedZipcode,
+            matchLevel: 'outward',
+            data: rowsOutward,
+          })
+        }
+      }
+
+      // 4) Area (e.g., SW)
+      if (tokens.area) {
+        const rowsArea = await runSearch(tokens.area, false)
+        if (rowsArea.length > 0) {
+          return response.json({
+            message: 'Services available for this zipcode',
+            available: true,
+            zipcode: normalizedZipcode,
+            matchLevel: 'area',
+            data: rowsArea,
+          })
+        }
       }
 
       return response.json({
@@ -69,31 +129,7 @@ export default class ServicesController {
   /**
    * Helper method to format service response consistently
    */
-  private formatServiceResponse(service: any) {
-    return {
-      id: service.id,
-      name: service.name,
-      slug: service.slug,
-      description: service.description,
-      fullDescription: service.fullDescription,
-      detailedDescription: service.detailedDescription,
-      whatIs: service.whatIs,
-      typicalVisit: service.typicalVisit,
-      services: service.services,
-      benefits: service.benefits,
-      benefitsExtended: service.benefitsExtended,
-      gettingStarted: service.gettingStarted,
-      gettingStartedPoints: service.gettingStartedPoints,
-      image: service.image,
-      icon: service.icon,
-      stats: service.stats,
-      category: service.category,
-      price: service.price,
-      duration: service.duration,
-      zipcodes: service.zipcodes,
-      isActive: service.isActive,
-    }
-  }
+  
 
   /**
    * Normalize a zipcode: remove all whitespace, strip non-alphanumeric characters,
@@ -105,6 +141,43 @@ export default class ServicesController {
       .replace(/\s+/g, '')
       .replace(/[^a-zA-Z0-9]/g, '')
       .toUpperCase()
+  }
+
+  /**
+   * Given a normalized UK postcode (no spaces, uppercase), derive matching tokens.
+   * - full: full normalized (e.g., SW1A1AA)
+   * - sector: outward + sector digit (e.g., SW1A1)
+   * - outward: area + district (e.g., SW1A)
+   * - area: 1-2 leading letters (e.g., SW)
+   */
+  private getUkPostcodeTokens(normalized: string): {
+    full?: string
+    sector?: string
+    outward?: string
+    area?: string
+  } {
+    const result: { full?: string; sector?: string; outward?: string; area?: string } = {}
+    if (!normalized || normalized.length < 2) return result
+
+    result.full = normalized
+
+    // Area: first 1-2 letters
+    const areaMatch = normalized.match(/^[A-Z]{1,2}/)
+    if (areaMatch) {
+      result.area = areaMatch[0]
+    }
+
+    // Outward: everything except last 3 chars (sector digit + unit letters)
+    if (normalized.length >= 4) {
+      result.outward = normalized.slice(0, normalized.length - 3)
+    }
+
+    // Sector: outward + sector digit (remove last 2 unit letters)
+    if (normalized.length >= 5) {
+      result.sector = normalized.slice(0, normalized.length - 2)
+    }
+
+    return result
   }
 
   /**
